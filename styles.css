@@ -46,8 +46,7 @@ input {
 
 @media (min-width: 1200px) {
     .container-form p {
-        /* width: 50%; */
-        / margin: 0 auto 28px;
+        margin: 0 auto 28px;
     }
 }
 
