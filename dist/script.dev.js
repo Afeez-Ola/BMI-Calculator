@@ -1,3 +1,5 @@
+"use strict";
+
 // JS esversion: 6
 // const person = {
 //     name: 'Afeez',
@@ -6,36 +8,23 @@
 //     getBirthYear: function() {
 //         return 2020 - this.age;
 //     },
-
 //     address: {
 //         city: 'Lagos',
 //         country: 'Nigeria',
 //     },
 // };
-
-let val;
-
-// let val = person.getBirthYear();
-
+var val; // let val = person.getBirthYear();
 // val = person.hobby;
-
 // val = person.name;
-
 // val = person.address.city;
-
 // let a = 2;
-
 // a = --a;
-
 // val = a;
-
 // let i = 0;
-
 // while (i < 12) {
 //     console.log(`Number ${i}`);
 //     i++;
 // }
-
 // let students = [
 //     'Afeez',
 //     'bolaji',
@@ -46,24 +35,20 @@ let val;
 //     'opeyemi',
 //     'quadri',
 // ];
-
 // students.forEach(function(student, index, array) {
 //     if (student === 'bolaji') {
 //         console.log('Head Boy');
 //     }
 //     console.log(student + ' : ' + index);
 // });
-
 // let user = {
 //     name: 'Bolaji Ola',
 //     age: 18,
 //     hobbies: ['eating', 'singing', 'fighting'],
 // };
-
 // for (const x in user) {
 //     console.log(`${x} : ${user[x]}`);
 // }
 
 val = window.navigator;
-
 console.log(val);

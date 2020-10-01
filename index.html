@@ -5,35 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="/materialize.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Task List</title>
 </head>
 
 <body>
-    <section>
-        <div class="container">
-            <div class="container-form">
-                <h2>BMI Calculator</h2>
-                <form method="" action="">
-
-                    <p>
-                        <label for="">Weight (kg): <input type="text" id="weight" placeholder="Your Weight in (kg)">
-                        </label>
-                    </p>
-                    <p>
-                        <label for="">Height (cm): <input type="text" id="height" placeholder="Your Height in (cm)">
-                        </label>
-                    </p>
-                    <button type="button" onclick="bmiCalculator()">Calculate</button>
-                </form>
-                <h3 class="result"></h3>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div id="main" class="card">
+                    <div class="card-content">
+                        <span class="card-title">Task List</span>
+                        <div class="row">
+                            <form id="task-form">
+                                <div class="input-field col s12">
+                                    <input type="text" name="task" id="task" value="Walk the dog">
+                                    <label for="task">New Task</label>
+                                </div>
+                        </div>
+                        <input type="submit" value="Add Task" class="btn">
+                        </form>
+                    </div>
+                    <div class="card-action">
+                        <h5 id="task-title">Tasks</h5>
+                        <ul class="collection">
+                            <li class="collection-item">
+                                List Item
+                                <a href="#" class="delete-item secondary-content">
+                                    <i class="fa fa-remove"></i>
+                                </a>
+                            </li>
+                            <li class="collection-item">
+                                List Item
+                                <a href="#" class="delete-item secondary-content">
+                                    <i class="fa fa-remove"></i>
+                                </a>
+                            </li>
+                            <li class="collection-item">
+                                List Item
+                                <a href="#" class="delete-item secondary-content">
+                                    <i class="fa fa-remove"></i>
+                                </a>
+                            </li>
+                            <li class="collection-item">
+                                List Item
+                                <a href="#" class="delete-item secondary-content">
+                                    <i class="fa fa-remove"></i>
+                                </a>
+                            </li>
+                            <li class="collection-item">
+                                List Item
+                                <a href="#" class="delete-item secondary-content">
+                                    <i class="fa fa-remove"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="clear-tasks btn black" href="#">Clear Tasks</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <script src="script.js"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="/materialize.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
