@@ -37,21 +37,22 @@ let val;
 // }
 
 // let students = [
-//     'Afeez',
-//     'bolaji',
-//     'ola',
-//     'laura',
-//     'krystal',
-//     'rufai',
-//     'opeyemi',
-//     'quadri',
+//   'Afeez',
+//   'bolaji',
+//   'ola',
+//   'laura',
+//   'krystal',
+//   'rufai',
+//   'opeyemi',
+//   'quadri',
 // ];
 
-// students.forEach(function(student, index, array) {
-//     if (student === 'bolaji') {
-//         console.log('Head Boy');
-//     }
-//     console.log(student + ' : ' + index);
+// students.forEach (function (student, index, array) {
+//   if (student === 'bolaji') {
+//     console.log ('Head Boy');
+//   }
+//   console.log (student + ' : ' + index);
+//   console.log (array);
 // });
 
 // let user = {
@@ -64,6 +65,12 @@ let val;
 //     console.log(`${x} : ${user[x]}`);
 // }
 
-val = window.navigator;
+// val = window.navigator;
 
-console.log(val);
+// val = document.getElementById('task-title');
+// document.querySelector('#task-title').style.color = 'yellow';
+
+// console.log(val.id);
+
+const items = document.querySelector('.collection-item');
+console.log(items);

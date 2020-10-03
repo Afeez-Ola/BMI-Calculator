@@ -26,20 +26,21 @@ var val; // let val = person.getBirthYear();
 //     i++;
 // }
 // let students = [
-//     'Afeez',
-//     'bolaji',
-//     'ola',
-//     'laura',
-//     'krystal',
-//     'rufai',
-//     'opeyemi',
-//     'quadri',
+//   'Afeez',
+//   'bolaji',
+//   'ola',
+//   'laura',
+//   'krystal',
+//   'rufai',
+//   'opeyemi',
+//   'quadri',
 // ];
-// students.forEach(function(student, index, array) {
-//     if (student === 'bolaji') {
-//         console.log('Head Boy');
-//     }
-//     console.log(student + ' : ' + index);
+// students.forEach (function (student, index, array) {
+//   if (student === 'bolaji') {
+//     console.log ('Head Boy');
+//   }
+//   console.log (student + ' : ' + index);
+//   console.log (array);
 // });
 // let user = {
 //     name: 'Bolaji Ola',
@@ -49,6 +50,10 @@ var val; // let val = person.getBirthYear();
 // for (const x in user) {
 //     console.log(`${x} : ${user[x]}`);
 // }
+// val = window.navigator;
+// val = document.getElementById('task-title');
+// document.querySelector('#task-title').style.color = 'yellow';
+// console.log(val.id);
 
-val = window.navigator;
-console.log(val);
+var items = document.querySelector('.collection-item');
+console.log(items);
