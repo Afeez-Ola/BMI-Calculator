@@ -93,22 +93,37 @@ let val;
 // val = listItem;
 // val = list;
 
-let li = document.createElement('li');
+// let li = document.createElement('li');
 
-li.className = 'collection-item';
-li.setAttribute('id', 'new-item');
+// li.className = 'collection-item';
+// li.setAttribute('id', 'new-item');
 
-li.textContent = 'Hello world';
-let task = document.querySelector('ul.collection').appendChild(li);
+// li.textContent = 'Hello world';
+// let task = document.querySelector('ul.collection').appendChild(li);
 
-let link = document.createElement('a');
+// let link = document.createElement('a');
 
-link.className = 'delete-item secondary-content';
+// link.className = 'delete-item secondary-content';
 
-link.innerHTML = '<i class="fa fa-remove" />';
+// link.innerHTML = '<i class="fa fa-remove" />';
 
-li.appendChild(link);
+// li.appendChild(link);
 
-val = task;
+let newHeading = document.createElement('h2');
+
+// newHeading.setAttribute('id', 'task-title');
+// newHeading.textContent = 'Task-Listing';
+
+newHeading.appendChild(document.createTextNode('Task-List'));
+
+newHeading.id = 'task-title';
+
+let oldHeading = document.querySelector('#task-title');
+
+let main = document.querySelector('.card-action');
+
+main.replaceChild(newHeading, oldHeading);
+
+val = main;
 
 console.log(val);
