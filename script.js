@@ -72,5 +72,43 @@ let val;
 
 // console.log(val.id);
 
-const items = document.querySelector('.collection-item');
-console.log(items);
+// let items = document.getElementsByClassName('collection-item');
+
+// items = Array.from(items);
+
+// // for (let i = 0; i < items.length; i++) {
+// //     let item = items[i];
+// //     item.style.color = 'red';
+// // }
+
+// items.forEach(item => {
+//     item.style.color = 'red';
+//     item.textContent = 'World';
+// });
+// console.log(items);
+
+// let list = document.querySelector('ul.collection');
+// let listItem = document.querySelector('li.collection-item');
+
+// val = listItem;
+// val = list;
+
+let li = document.createElement('li');
+
+li.className = 'collection-item';
+li.setAttribute('id', 'new-item');
+
+li.textContent = 'Hello world';
+let task = document.querySelector('ul.collection').appendChild(li);
+
+let link = document.createElement('a');
+
+link.className = 'delete-item secondary-content';
+
+link.innerHTML = '<i class="fa fa-remove" />';
+
+li.appendChild(link);
+
+val = task;
+
+console.log(val);

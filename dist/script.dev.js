@@ -54,6 +54,30 @@ var val; // let val = person.getBirthYear();
 // val = document.getElementById('task-title');
 // document.querySelector('#task-title').style.color = 'yellow';
 // console.log(val.id);
+// let items = document.getElementsByClassName('collection-item');
+// items = Array.from(items);
+// // for (let i = 0; i < items.length; i++) {
+// //     let item = items[i];
+// //     item.style.color = 'red';
+// // }
+// items.forEach(item => {
+//     item.style.color = 'red';
+//     item.textContent = 'World';
+// });
+// console.log(items);
+// let list = document.querySelector('ul.collection');
+// let listItem = document.querySelector('li.collection-item');
+// val = listItem;
+// val = list;
 
-var items = document.querySelector('.collection-item');
-console.log(items);
+var li = document.createElement('li');
+li.className = 'collection-item';
+li.setAttribute('id', 'new-item');
+li.textContent = 'Hello world';
+var task = document.querySelector('ul.collection').appendChild(li);
+var link = document.createElement('a');
+link.className = 'delete-item secondary-content';
+link.innerHTML = '<i class="fa fa-remove" />';
+li.appendChild(link);
+val = task;
+console.log(val);
