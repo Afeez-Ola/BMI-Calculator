@@ -109,21 +109,90 @@ let val;
 
 // li.appendChild(link);
 
-let newHeading = document.createElement('h2');
+// let newHeading = document.createElement('h2');
 
-// newHeading.setAttribute('id', 'task-title');
-// newHeading.textContent = 'Task-Listing';
+// // newHeading.setAttribute('id', 'task-title');
+// // newHeading.textContent = 'Task-Listing';
 
-newHeading.appendChild(document.createTextNode('Task-List'));
+// newHeading.appendChild(document.createTextNode('Task-List'));
 
-newHeading.id = 'task-title';
+// newHeading.id = 'task-title';
 
-let oldHeading = document.querySelector('#task-title');
+// let oldHeading = document.querySelector('#task-title');
 
-let main = document.querySelector('.card-action');
+// let main = document.querySelector('.card-action');
 
-main.replaceChild(newHeading, oldHeading);
+// main.replaceChild(newHeading, oldHeading);
 
-val = main;
+// val = main;
 
-console.log(val);
+// const clearBtn = document.querySelector('.clear-tasks');
+
+// const card = document.querySelector('.card-action');
+
+// val = clearBtn;
+
+// // clearBtn.addEventListener('click', clear);
+// // clearBtn.addEventListener('dblclick', clear);
+
+// let status = card.addEventListener('mousemove', runEvent);
+
+// function runEvent(e) {
+//     console.log(`Event: ${e.type}`);
+
+//     header.textContent = `MouseX: ${e.offsetX}, MouseY: ${e.offsetY}`;
+//     card.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 0)`;
+// }
+
+const card = document.querySelector('.card');
+const taskList = document.querySelector('ul.collection');
+const header = document.querySelector('h5');
+const form = document.querySelector('form');
+const input = document.querySelector('#task');
+
+const addTask = document.querySelector('input.btn');
+
+input.value = '';
+
+form.addEventListener('submit', addEvent);
+
+document.body.addEventListener('click', deleteEvent);
+
+// input.addEventListener('keyup', runEvent);
+
+function addEvent(e) {
+    const newTask = document.createElement('li');
+    const link = document.createElement('a');
+    const icon = document.createElement('i');
+
+    icon.classList = 'fa fa-remove';
+
+    link.classList = 'delete-item secondary-content';
+    link.appendChild(icon);
+
+    newTask.className = 'collection-item';
+
+    newTask.textContent = input.value;
+
+    newTask.appendChild(link);
+    console.log(newTask);
+
+    taskList.append(newTask);
+    e.preventDefault();
+
+    // console.log(`EVENT TYPE: ${e.type}`);
+    // console.log(e.target.value);
+    // header.textContent = e.target.value;
+}
+
+function deleteEvent(evt) {
+    if (evt.target.parentElement.classList.contains('delete-item')) {
+        evt.target.parentElement.parentElement.remove();
+    }
+}
+
+// console.log(val);
+
+// console.log(val);
+
+// console.log(val);

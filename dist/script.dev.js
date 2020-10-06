@@ -78,14 +78,58 @@ var val; // let val = person.getBirthYear();
 // link.className = 'delete-item secondary-content';
 // link.innerHTML = '<i class="fa fa-remove" />';
 // li.appendChild(link);
+// let newHeading = document.createElement('h2');
+// // newHeading.setAttribute('id', 'task-title');
+// // newHeading.textContent = 'Task-Listing';
+// newHeading.appendChild(document.createTextNode('Task-List'));
+// newHeading.id = 'task-title';
+// let oldHeading = document.querySelector('#task-title');
+// let main = document.querySelector('.card-action');
+// main.replaceChild(newHeading, oldHeading);
+// val = main;
+// const clearBtn = document.querySelector('.clear-tasks');
+// const card = document.querySelector('.card-action');
+// val = clearBtn;
+// // clearBtn.addEventListener('click', clear);
+// // clearBtn.addEventListener('dblclick', clear);
+// let status = card.addEventListener('mousemove', runEvent);
+// function runEvent(e) {
+//     console.log(`Event: ${e.type}`);
+//     header.textContent = `MouseX: ${e.offsetX}, MouseY: ${e.offsetY}`;
+//     card.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 0)`;
+// }
 
-var newHeading = document.createElement('h2'); // newHeading.setAttribute('id', 'task-title');
-// newHeading.textContent = 'Task-Listing';
+var card = document.querySelector('.card');
+var taskList = document.querySelector('ul.collection');
+var header = document.querySelector('h5');
+var form = document.querySelector('form');
+var input = document.querySelector('#task');
+var addTask = document.querySelector('input.btn');
+input.value = '';
+form.addEventListener('submit', addEvent);
+document.body.addEventListener('click', deleteEvent); // input.addEventListener('keyup', runEvent);
 
-newHeading.appendChild(document.createTextNode('Task-List'));
-newHeading.id = 'task-title';
-var oldHeading = document.querySelector('#task-title');
-var main = document.querySelector('.card-action');
-main.replaceChild(newHeading, oldHeading);
-val = main;
-console.log(val);
+function addEvent(e) {
+  var newTask = document.createElement('li');
+  var link = document.createElement('a');
+  var icon = document.createElement('i');
+  icon.classList = 'fa fa-remove';
+  link.classList = 'delete-item secondary-content';
+  link.appendChild(icon);
+  newTask.className = 'collection-item';
+  newTask.textContent = input.value;
+  newTask.appendChild(link);
+  console.log(newTask);
+  taskList.append(newTask);
+  e.preventDefault(); // console.log(`EVENT TYPE: ${e.type}`);
+  // console.log(e.target.value);
+  // header.textContent = e.target.value;
+}
+
+function deleteEvent(evt) {
+  if (evt.target.parentElement.classList.contains('delete-item')) {
+    evt.target.parentElement.parentElement.remove();
+  }
+} // console.log(val);
+// console.log(val);
+// console.log(val);
