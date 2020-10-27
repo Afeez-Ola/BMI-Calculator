@@ -135,9 +135,8 @@ function addEvent(e) {
   //
   // }
 
-  setLocalStorage(newTask.textContent);
-  input.value = '';
-  e.preventDefault();
+  setLocalStorage(input.value);
+  input.value = ''; // e.preventDefault();
 }
 
 function deleteEvent(evt) {

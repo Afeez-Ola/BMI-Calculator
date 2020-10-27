@@ -188,10 +188,10 @@ function addEvent(e) {
     // } else {
     //
     // }
-    setLocalStorage(newTask.textContent);
+    setLocalStorage(input.value);
     input.value = '';
 
-    e.preventDefault();
+    // e.preventDefault();
 }
 
 function deleteEvent(evt) {
