@@ -17,8 +17,6 @@ function eventsListeners() {
     document.body.addEventListener('click', deleteEvent);
     clearBtn.addEventListener('click', clearTask);
     filter.addEventListener('keyup', filterTask);
-
-    // e.preventDefault();
 }
 
 function addEvent(e) {
