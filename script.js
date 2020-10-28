@@ -182,12 +182,12 @@ function addEvent(e) {
     newTask.textContent = input.value;
 
     newTask.appendChild(link);
-    taskList.append(newTask);
-    // if (input.value === '') {
-    //     alert('Add a Task Please!');
-    // } else {
-    //
-    // }
+
+    if (input.value === '') {
+        alert('Add a Task Please!');
+    } else {
+        taskList.append(newTask);
+    }
     setLocalStorage(input.value);
     input.value = '';
 
@@ -258,12 +258,13 @@ function getTask() {
         newTask.textContent = task;
 
         newTask.appendChild(link);
-        taskList.append(newTask);
-        // if (input.value === '') {
-        //     alert('Add a Task Please!');
-        // } else {
 
-        // }
+        if (input.value === '') {
+            alert('Add a Task Please!');
+        } else {
+            taskList.append(newTask);
+
+        }
     });
 }
 

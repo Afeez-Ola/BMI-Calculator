@@ -129,11 +129,12 @@ function addEvent(e) {
   newTask.className = 'collection-item';
   newTask.textContent = input.value;
   newTask.appendChild(link);
-  taskList.append(newTask); // if (input.value === '') {
-  //     alert('Add a Task Please!');
-  // } else {
-  //
-  // }
+
+  if (input.value === '') {
+    alert('Add a Task Please!');
+  } else {
+    taskList.append(newTask);
+  }
 
   setLocalStorage(input.value);
   input.value = ''; // e.preventDefault();
@@ -197,10 +198,12 @@ function getTask() {
     newTask.className = 'collection-item';
     newTask.textContent = task;
     newTask.appendChild(link);
-    taskList.append(newTask); // if (input.value === '') {
-    //     alert('Add a Task Please!');
-    // } else {
-    // }
+
+    if (input.value === '') {
+      alert('Add a Task Please!');
+    } else {
+      taskList.append(newTask);
+    }
   });
 } // console.log(val);
 // console.log(val);
