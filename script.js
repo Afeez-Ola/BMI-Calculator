@@ -1,115 +1,60 @@
-const card = document.querySelector('.card');
-const taskList = document.querySelector('ul.collection');
-const header = document.querySelector('h5');
-const form = document.querySelector('form');
-const input = document.querySelector('#task');
-const clearBtn = document.querySelector('a.clear-tasks');
-const filter = document.querySelector('#filter');
-const addTask = document.querySelector('input.btn');
+// function Player(name, age, position, country) {
+//     this.name = name;
+//     this.age = age;
+//     this.position = position;
+//     this.country = country;
+// }
 
-input.value = '';
+// const ronaldo = new Player('Ronaldo', 37, 'Winger', 'Portugal');
+// const messi = new Player('Messi', 36, 'Midfielder', 'Argentina');
+// const ighalo = new Player('Ighalo', 34, 'Striker', 'Nigeria');
 
-eventsListeners();
+// console.log(ighalo);
 
-function eventsListeners() {
-    form.addEventListener('submit', addEvent);
-    document.addEventListener('DOMContentLoaded', getTask);
-    document.body.addEventListener('click', deleteEvent);
-    clearBtn.addEventListener('click', clearTask);
-    filter.addEventListener('keyup', filterTask);
+// function Man(fName, lName) {
+//     this.fName = fName;
+//     this.lName = lName;
+// }
+
+// const james = new Man('john', 'james');
+
+// Man.prototype.fullName = function() {
+//     return this.fName + ' ' + this.lName;
+// };
+
+// Man.prototype.getMarried = function(newLName) {
+//     return (this.lName = newLName);
+// };
+
+// const mary = new Man('Mary', 'Smith');
+
+// mary.getMarried('Jackson');
+
+// console.log(mary.fullName());
+
+// console.log(mary.hasOwnProperty('fullName'));
+
+function Person(fName, lName) {
+    this.fName = fName;
+    this.lName = lName;
 }
 
-function addEvent(e) {
-    const newTask = document.createElement('li');
-    const link = document.createElement('a');
-    const icon = document.createElement('i');
-    icon.classList = 'fa fa-remove';
+Person.prototype.greeting = function() {
+    return `Hello there, ${this.fName} ${this.lName}`;
+};
 
-    link.classList = 'delete-item secondary-content';
-    link.style.cursor = 'pointer';
-    link.appendChild(icon);
+const person1 = new Person('Bolaji', 'Ola');
 
-    newTask.className = 'collection-item';
-
-    newTask.textContent = input.value;
-
-    newTask.appendChild(link);
-
-    if (input.value === '') {
-        alert('Add a Task Please!');
-    } else {
-        taskList.append(newTask);
-    }
-    setLocalStorage(input.value);
-    input.value = '';
-
-    e.preventDefault();
+function Customer(fName, lName, phone, membership) {
+    Person.call(this, fName, lName);
+    this.phone = phone;
+    this.membership = membership;
 }
 
-function deleteEvent(evt) {
-    if (evt.target.parentElement.classList.contains('delete-item')) {
-        evt.target.parentElement.parentElement.remove();
-    }
-}
+Customer.prototype = Object.create(Person.prototype);
 
-function filterTask(e) {
-    const text = e.target.value.toLowerCase();
+const customer1 = new Customer('Salim', 'More', '07042280970', 'Silver');
 
-    document.querySelectorAll('.collection-item').forEach(function(task) {
-        const item = task.firstChild.textContent;
+console.log(customer1.greeting());
 
-        if (item.toLowerCase().indexOf(text) != -1) {
-            task.style.display = 'block';
-        } else {
-            task.style.display = 'none';
-        }
-    });
-}
-
-function clearTask(e) {
-    taskList.innerHTML = '';
-    console.log('task cleared' + e);
-
-    e.preventDefault();
-}
-
-function setLocalStorage(task) {
-    let tasks;
-
-    if (localStorage.getItem('tasks') === null) {
-        tasks = [];
-    } else {
-        tasks = JSON.parse(localStorage.getItem('tasks'));
-    }
-
-    tasks.push(task);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-}
-
-function getTask() {
-    let tasks;
-
-    if (localStorage.getItem('tasks') === null) {
-        tasks = [];
-    } else {
-        tasks = JSON.parse(localStorage.getItem('tasks'));
-    }
-
-    tasks.forEach(function(task) {
-        const newTask = document.createElement('li');
-        const link = document.createElement('a');
-        const icon = document.createElement('i');
-        icon.classList = 'fa fa-remove';
-
-        link.classList = 'delete-item secondary-content';
-        link.style.cursor = 'pointer';
-        link.appendChild(icon);
-
-        newTask.className = 'collection-item';
-
-        newTask.textContent = task;
-
-        newTask.appendChild(link);
-        taskList.append(newTask);
-    });
-}
+console.log(person1.greeting());
