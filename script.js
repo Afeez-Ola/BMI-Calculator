@@ -34,27 +34,99 @@
 
 // console.log(mary.hasOwnProperty('fullName'));
 
-function Person(fName, lName) {
-    this.fName = fName;
-    this.lName = lName;
-}
+// function Person(fName, lName) {
+//     this.fName = fName;
+//     this.lName = lName;
+// }
 
-Person.prototype.greeting = function() {
-    return `Hello there, ${this.fName} ${this.lName}`;
+// Person.prototype.greeting = function() {
+//     return `Hello there, ${this.fName} ${this.lName}`;
+// };
+
+// const person1 = new Person('Bolaji', 'Ola');
+
+// function Customer(fName, lName, phone, membership) {
+//     Person.call(this, fName, lName);
+//     this.phone = phone;
+//     this.membership = membership;
+// }
+
+// Customer.prototype = Object.create(Person.prototype);
+// Customer.prototype.Constructor = Customer;
+// Customer.prototype.greeting = function() {
+//     return `Hello there, ${this.fName} ${this.lName}. Welcome to our Company`;
+// };
+
+// const customer1 = new Customer('Salim', 'More', '07042280970', 'Silver');
+
+// console.log(customer1.greeting());
+// console.log(customer1);
+
+// console.log(person1.greeting());
+
+// const personPrototypes = {
+//     greeting: function() {
+//         return `Hello there, ${this.fName} ${this.lName}`;
+//     },
+
+//     getMarried: function(newLName) {
+//         this.fName = newLName;
+//     },
+// };
+
+// const bolaji = Object.create(personPrototypes);
+
+// bolaji.fName = 'Bolaji';
+// bolaji.lName = 'Ola';
+
+// const laura = Object.create(personPrototypes, {
+//     fName: { value: 'Laura' },
+//     lName: { value: 'Charles' },
+// });
+// bolaji.getMarried('charles');
+// console.log(laura.greeting());
+// console.log(bolaji.greeting());
+// console.log(laura.greeting())
+
+const personPrototypes = {
+    greeting: function() {
+        return `Hello there, ${this.fName} ${this.lName}`;
+    },
+
+    getDrunk: function(newLName) {
+        this.fName = newLName;
+    },
 };
 
-const person1 = new Person('Bolaji', 'Ola');
+// const ronnie = Object.create(personPrototypes);
 
-function Customer(fName, lName, phone, membership) {
-    Person.call(this, fName, lName);
-    this.phone = phone;
-    this.membership = membership;
-}
+// ronnie.fName = 'Ronnie';
+// ronnie.lName = 'Koeman';
 
-Customer.prototype = Object.create(Person.prototype);
+const ronnie = Object.create(personPrototypes, {
+    fName: { value: 'Ronnie' },
+    lName: { value: 'Koeman' },
+});
 
-const customer1 = new Customer('Salim', 'More', '07042280970', 'Silver');
+ronnie.getDrunk('Drunken');
 
-console.log(customer1.greeting());
+console.log(ronnie.greeting());
 
-console.log(person1.greeting());
+// const personPrototypes = {
+//     greeting: function() {
+//         return `Hello there, ${this.fName} ${this.lName}`;
+//     },
+
+//     getDrunk: function(newLName) {
+//         this.fName = newLName;
+//     },
+// };
+
+// const ronnie = Object.create(personPrototypes);
+
+// ronnie.fName = 'Ronnie';
+// ronnie.lName = 'Koeman';
+
+// ronnie.getDrunk('Drunken');
+
+// console.log(ronnie.greeting());
